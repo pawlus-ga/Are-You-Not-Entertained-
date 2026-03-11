@@ -1,35 +1,32 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { getAllMovies } from './services/movies.jsx';
 
 function App() {
-  const [count, setCount] = useState(0)
+const App = () => {  
+    const [ setMovies] = useState([]);
+
+    // Example of fetching movies on component mount
+    useEffect(() => {
+        const fetchMovies = async () => {
+            try {
+                const moviesData = await getAllMovies();
+                setMovies(moviesData);
+            } catch (error) {
+                console.error('Error fetching movies:', error);
+            }
+        };
+
+        fetchMovies();
+    }, []); // Empty dependency array means this runs once on mount  
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>Welcome to Are You Not Entertained?</h1>
+      <p>Discover and explore your favorite movies!</p>
+      {/* You can add more components and routes here */} 
     </>
   )
 }
-
+}
 export default App
