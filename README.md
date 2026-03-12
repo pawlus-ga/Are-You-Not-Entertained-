@@ -3,20 +3,38 @@
 A user generated movie database
 Link to the app:
 
-A. Sign-Up:
-    If you are a first time user click the "sign-up" link, then create a username and password.
+1. Back Story:
 
-B. Sign-In:
-    If you are a returning user click the "sign-in" link and enter you current username and password.
+2. Getting Started:
+    A. Sign-Up:
+        If you are a first time user click the "sign-up" link, then create a username and password.
 
-C. Add Title:
-    Click the "Add Title" Button to add a title to your list.
+    B. Sign-In:
+        If you are a returning user click the "sign-in" link and enter you current username and password.
 
-D. Search Title:
-    Allows the user to "Search for Title" and add title to the list.
+    C. Add Title:
+        Click the "Add Title" Button to add a title to your list.
 
-E. Edit Title:
-    Allows the user to edit the details of the selected title.
+    D. Search Title:
+        Allows the user to "Search for Title" and add title to the list.
 
-F. Delete Title:
-    Allows the user to delete the selected title.
+    E. Edit Title:
+        Allows the user to edit the details of the selected title.
+
+    F. Delete Title:
+        Allows the user to delete the selected title.
+
+3. Attributions:
+    ReadMe Image: Photo by Tima Miroshnichenko: https://www.pexels.com/photo/a-group-of-people-watching-movie-7991318/
+
+
+4. Coding Languages and Technologies Used:
+
+
+
+5. Future Endevors:
+    A. Further Styling for buttons (location, color, ect.)
+
+    B. Adding audio, for a more interactive experience.
+
+    C. Better compatibility for mobile devices

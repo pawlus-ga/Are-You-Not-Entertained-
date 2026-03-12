@@ -5,7 +5,9 @@ const app = express();
 const mongoose = require('mongoose');
 const cors = require('cors');
 const logger = require('morgan');
+const testJwtRouter = require('./controllers/test-jwt');
 
+//middleware 
 mongoose.connect(process.env.MONGODB_URI);
 
 mongoose.connection.on('connected', () => {
@@ -17,7 +19,8 @@ app.use(express.json());
 app.use(logger('dev'));
 
 // Routes go here
-
 app.listen(4000, () => {
   console.log('The express app is ready!');
 });
+
+app.use('/test-jwt', testJwtRouter);
