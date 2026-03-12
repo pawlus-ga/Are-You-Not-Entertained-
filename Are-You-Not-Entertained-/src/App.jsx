@@ -1,11 +1,11 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import { getAllMovies } from './services/movies.jsx';
+import MoviesList from './components/moviesList.jsx';
 
 function App() {
 const App = () => {  
-    const [ setMovies] = useState([]);
-
+    const [movies, setMovies] = useState([]);
     // Example of fetching movies on component mount
     useEffect(() => {
         const fetchMovies = async () => {
@@ -25,6 +25,7 @@ const App = () => {
       <h1>Welcome to Are You Not Entertained?</h1>
       <p>Discover and explore your favorite movies!</p>
       {/* You can add more components and routes here */} 
+      <MoviesList movies={movies} />
     </>
   )
 }
