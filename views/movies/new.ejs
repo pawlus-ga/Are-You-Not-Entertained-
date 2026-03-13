@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Search Movies</title>
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+
+    <h1>Search Movies</h1>
+
+    <form action="/movies/search" method="GET">
+      <input
+        type="text"
+        name="q"
+        placeholder="Search for a movie"
+        value="<%= query %>"
+      />
+      <button type="submit">Search</button>
+    </form>
+
+    <% if (movies && movies.length > 0) { %>
+      <ul>
+        <% movies.forEach((movie) => { %>
+          <li>
+            <a href="/movies/<%= movie.imdbID %>">
+              <%= movie.Title %> (<%= movie.Year %>)
+            </a>
+          </li>
+        <% }) %>
+      </ul>
+    <% } else if (movies && movies.length === 0) { %>
+      <p>No movies found.</p>
+    <% } %>
+  </body>
+</html>

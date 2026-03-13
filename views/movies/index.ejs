@@ -1,0 +1,13 @@
+<h1>
+    Search Results
+</h1>
+
+<ul>
+    <% movies.forEach(movie => { %> 
+        <li>
+            <a href="/movies/<%= movie.imdbID %>">
+                <%= movie.Title %> (<%= movie.Year %>)
+            </a>
+        </li>
+    <% }) %>
+</ul>
