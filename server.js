@@ -7,7 +7,11 @@ const mongoose = require('mongoose');
 const logger = require('morgan');
 const PORT = process.env.PORT || 3000
 const methodOverride = require('method-override');
+const cors = require('cors');
+const logger = require('morgan');
+const testJwtRouter = require('./controllers/test-jwt');
 
+//middleware 
 mongoose.connect(process.env.MONGODB_URI);
 
 mongoose.connection.on('connected', () => {
@@ -18,6 +22,7 @@ app.set('view engine', 'ejs');
 
 app.use(express.urlencoded({ extended: false }));
 // app.use(cors());
+app.use(cors());
 app.use(express.json());
 app.use(methodOverride('_method'));
 app.use(logger('dev'));
@@ -38,6 +43,8 @@ app.use('/movies', moviesRouter)
 // app.use('/users', userRouter)
 // app.use('/test-jwt', testJwtRouter)
 
-app.listen(3000, () => {
+app.listen(4000, () => {
   console.log('The express app is ready!');
 });
+
+app.use('/test-jwt', testJwtRouter);
