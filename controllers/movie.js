@@ -25,9 +25,9 @@ router.get('/search', async (req, res) => {
   }
 })
 
-router.get('/:imdbId', async (req, res) => {
+router.get('/:omdbId', async (req, res) => {
   try {
-    const movie = await movieApi.getMovieById(req.params.imdbId);
+    const movie = await movieApi.getMovieById(req.params.omdbId);
     res.render('movies/show', { movie });
   } catch (err) {
     console.log(err);

@@ -39,7 +39,7 @@ app.use(express.static('public'));
 
 // Routes go here
 
-const moviesRouter = require('./controllers/movies');
+const moviesRouter = require('./controllers/movie.js');
 
 app.get('/', (req, res) => {
   res.render('index');
