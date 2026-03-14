@@ -7,8 +7,7 @@ const mongoose = require('mongoose');
 const logger = require('morgan');
 const PORT = process.env.PORT || 3000
 const methodOverride = require('method-override');
-const cors = require('cors');
-const logger = require('morgan');
+// const cors = require('cors');
 const testJwtRouter = require('./controllers/test-jwt');
 
 //middleware 
@@ -22,7 +21,7 @@ app.set('view engine', 'ejs');
 
 app.use(express.urlencoded({ extended: false }));
 // app.use(cors());
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
 app.use(methodOverride('_method'));
 app.use(logger('dev'));
