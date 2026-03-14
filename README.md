@@ -49,6 +49,9 @@ Link to the app:
     6. Mongoose
     7. Morgan
     8. Method-Override
+    9. Ejs
+    express-session
+    node-fetch
 
 5. Future Endevors:
 
