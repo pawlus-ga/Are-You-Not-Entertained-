@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import { getAllMovies } from './services/movies.jsx';
+import { getAllMovies } from './services/movies.js';
 import MoviesList from './components/moviesList.jsx';
 import NavBar from './components/NavBar/NavBar'
 import SignUpForm from './components/SignUpForm/SignUpForm'
