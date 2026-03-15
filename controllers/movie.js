@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router()
-const movieApi = require('../Are-You-Not-Entertained-/services/movie-api');
+const movieApi = require('../Are-You-Not-Entertained-/services/movie-api.js');
+const Movie = require('../models/movie.js');
+
 
 router.get('/new', (req, res) => {
     res.render('movies/new', { movies: null, query: '' });

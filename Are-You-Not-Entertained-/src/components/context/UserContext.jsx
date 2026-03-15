@@ -4,7 +4,7 @@ const UserContext = createContext()
 
 const getUserFromToken = () => {
     const token = localStorage.getItem('token')
-    if(!token) return null
+    if (!token) return null
     return JSON.parse(atob(token.split('.')[1])).payload
 }
 

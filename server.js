@@ -4,13 +4,12 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const logger = require('morgan');
-const PORT = process.env.PORT || 4000
+const PORT = process.env.PORT || 5173
 const methodOverride = require('method-override');
 const cors = require('cors');
 const testJwtRouter = require('./controllers/test-jwt');
 const session = require('express-session');
-const isSignedIn = require('./middleware/is-signed-in.js');
-const passUserToView = require('./middleware/pass-user-to-view.js');
+
 
 
 //middleware 
@@ -20,8 +19,7 @@ app.use(session({
   saveUninitialized: false
 }));
 
-app.use(isSignedIn);
-app.use(passUserToView);
+
 
 mongoose.connect(process.env.MONGODB_URI);
 
@@ -51,7 +49,7 @@ app.use('/movies', moviesRouter)
 //app.use('/users', userRouter)
 //app.use('/test-jwt', testJwtRouter)
 
-app.listen(4000, () => {
+app.listen(5173, () => {
   console.log('The express app is ready!');
 });
 

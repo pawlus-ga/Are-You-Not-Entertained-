@@ -1,46 +1,60 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import { Routes, Route } from 'react-router-dom';
+import NavBar from './components/NavBar/NavBar.jsx';
+import SignUpForm from './components/SignUpForm/SignUpForm.jsx';
+import SignInForm from './components/SignInForm/SignInForm.jsx';
+import Landing from './components/Landing/Landing.jsx';
+import Dashboard from './components/Dashboard/Dashboard.jsx';
+import MoviesList from './components/MoviesList/MoviesList.jsx';
+import MovieDetail from './components/MovieDetail/MovieDetail.jsx';
+import MovieForm from './components/MovieForm/MovieForm.jsx';
+import EditMovie from './components/EditMovie/EditMovie.jsx';
 import { getAllMovies } from './services/movies.js';
-import MoviesList from './components/moviesList.jsx';
-import NavBar from './components/NavBar/NavBar'
-import SignUpForm from './components/SignUpForm/SignUpForm'
-import SignInForm from './components/SignInForm/SignInForm'
-import Landing from './components/Landing/Landing'
-import Dashboard from './components/Dashboard/Dashboard'
-import { UserContext } from './context/UserContext'
-
+import { UserContext } from './context/UserContext.jsx';
 
 function App() {
-  const App = () => {
-    const [movies, setMovies] = useState([]);
-    // Example of fetching movies on component mount
-    useEffect(() => {
-      const fetchMovies = async () => {
-        try {
-          const moviesData = await getAllMovies();
-          setMovies(moviesData);
-        } catch (error) {
-          console.error('Error fetching movies:', error);
-        }
-      };
+  const [movies, setMovies] = useState([])
+  const [isFormOpen, setIsFormOpen] = useState(false)
 
-      fetchMovies();
-    }, []); // Empty dependency array means this runs once on mount  
+  const handleFormView = () => {
+    setIsFormOpen(!isFormOpen)
+  }
 
-    return (
-      <>
-        <h1>Welcome to Are You Not Entertained?</h1>
-        <p>Discover and explore your favorite movies!</p>
-        {/* You can add more components and routes here */}
-        <MoviesList movies={movies} />
+  const fetchMovies = async () => {
+    const moviesData = await getAllMovies()
+    setMovies(moviesData)
+  }
+
+  useEffect(() => {
+    fetchMovies()
+  }, [])
+
+  return (
+    <div className="App">
+      <UserContext>
         <NavBar />
         <Routes>
-          <Route path='/' element={user ? <Dashboard /> : <Landing />} />
+          <Route path='/' element={<Landing />} />
           <Route path='/sign-up' element={<SignUpForm />} />
+
           <Route path='/sign-in' element={<SignInForm />} />
+
+          <Route path='/dashboard' element={<Dashboard />} />
+
+          <Route path='/movies' element={<MoviesList movies={movies}
+             handleFormView={handleFormView} isFormOpen={isFormOpen} />} />
+
+          <Route path='/movies/:id' element={<MovieDetail />} />
+
+          <Route path='/movies/new' element={<MovieForm />} />
+
+          <Route path='/movies/:id/edit' element={<EditMovie />} />
+
         </Routes>
-      </>
-    )
-  }
+      </UserContext>
+    </div>
+  )
 }
-export default App
+
+export default App  
