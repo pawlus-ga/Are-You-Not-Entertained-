@@ -37,6 +37,7 @@ Link to the app:
 
     ReadMe Image: Photo by Tima Miroshnichenko: https://www.pexels.com/photo/a-group-of-people-watching-movie-7991318/
 
+    https://www.freepik.com/free-photo/hand-holding-entertainment-objects-isolated_18417013.htm#fromView=search&page=1&position=4&uuid=ec571042-87db-4b3d-accd-534aecf0aedc&query=movies
 
 4. Coding Languages and Technologies Used:
 

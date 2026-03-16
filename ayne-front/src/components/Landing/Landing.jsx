@@ -1,7 +1,7 @@
 const Landing = () => {
     return (
         <main>
-            <h1>Hello Are You Not Entertained?</h1>
+            <h1>Hello, Are You Not Entertained?</h1>
         </main>
     )
 }
