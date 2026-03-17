@@ -14,17 +14,19 @@ const listsRouter = require('./controllers/list.js');
 
 //middleware 
 app.use(session({
-  secret: process.env.SESSION_SECRET,
-  resave: false,
-  saveUninitialized: false
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false
 }));
+
+
 
 
 
 mongoose.connect(process.env.MONGODB_URI);
 
 mongoose.connection.on('connected', () => {
-  console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
+  console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
 });
 
 // app.set('view engine', 'ejs');
@@ -40,7 +42,7 @@ app.use(logger('dev'));
 const moviesRouter = require('./controllers/movie.js');
 
 app.get('/', (req, res) => {
-  res.send('Backend is running');
+  res.send('Backend is running');
 });
 
 app.use('/movies', moviesRouter)
@@ -50,5 +52,5 @@ app.use('/auth', authRouter)
 app.use('/test-jwt', testJwtRouter)
 
 app.listen(PORT, () => {
-  console.log('The express app is ready!');
+  console.log('The express app is ready!');
 });
