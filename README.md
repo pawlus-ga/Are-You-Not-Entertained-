@@ -1,4 +1,4 @@
-![Watching a movie in a theater](../src/public/images/ReadMeTheater.jpg)
+![Watching a movie in a theater](src/public/images/ReadMeTheater.jpg)
 # Are You Not Entertained?
 A user generated movie database
 
