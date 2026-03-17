@@ -18,6 +18,8 @@ const NavBar = () => {
                     <li><Link to='/'>Dashboard</Link></li>
                     <li><Link to='/' onClick={handleSignOut}>Sign Out</Link></li>
                     <li><Link to="/movies/search">Search Movies</Link></li>
+                    <li><Link to="/lists/new">Create List</Link></li>
+                    
                 </ul>
             ) : (
                 <ul>

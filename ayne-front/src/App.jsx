@@ -13,6 +13,7 @@ import EditMovie from './components/EditMovie/EditMovie.jsx';
 import { getAllMovies } from './services/movies.js';
 import MovieSearch from './pages/MovieSearch';
 import MovieDetails from './pages/MovieDetails';
+import CreateList from './pages/CreateList';
 // import { UserProvider } from './context/UserContext.jsx';
 
 function App() {
@@ -46,17 +47,18 @@ function App() {
           <Route path='/movies' element={<MovieList movies={movies}
              handleFormView={handleFormView} isFormOpen={isFormOpen} />} />
 
+          <Route path="/movies/:omdbId" element={<MovieDetails />} />
+          
           <Route path='/movies/:id' element={<MovieDetail />} />
 
           <Route path='/movies/new' element={<MovieForm />} />
 
           <Route path='/movies/:id/edit' element={<EditMovie />} />
 
-          <Route path="/" element={<h1>Home</h1>} />
-
           <Route path="/movies/search" element={<MovieSearch />} />
 
-          <Route path="/movies/:omdbId" element={<MovieDetails />} />
+          <Route path="/lists/new" element={<CreateList />} />
+
 
         </Routes>
     </div>
