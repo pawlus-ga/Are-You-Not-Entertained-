@@ -30,7 +30,7 @@ router.post('/sign-in', async (req, res) => {
     try {
         const user = await User.findOne({ username: req.body.username })
         if (!user) {
-            return res.json(401).json({ err: 'invalid credentials' })
+            return res.status(401).json({ err: 'invalid credentials' })
         }
 
         const isPasswordCorrect = bcrypt.compareSync(req.body.password, user.password)

@@ -58,8 +58,12 @@ Link to the app:
     15. Dom
     16. React-Bootstrap
 
+5. Screeshots:
 
-5. Future Endeavors:
+
+
+
+6. Future Endeavors:
 
     A. Further Styling for buttons (location, color, ect.)
 
