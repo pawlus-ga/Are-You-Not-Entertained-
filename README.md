@@ -4,7 +4,7 @@ A user generated movie database
 
 Link to the app:
 
-1. Back Story: Are you a fan of movies and tv shows? Because we are!, and with this user generated list you can now track all of you favorite movis and tv shows you love, all in one place.
+1. Back Story: Are you a fan of movies and tv shows? Because we are!, and with this user generated list you can now track all of you favorite movies and tv shows you love, all in one place.
 
 2. Getting Started:
 
@@ -59,7 +59,7 @@ Link to the app:
     16. React-Bootstrap
 
 
-5. Future Endevors:
+5. Future Endeavors:
 
     A. Further Styling for buttons (location, color, ect.)
 
