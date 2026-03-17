@@ -12,7 +12,7 @@ const session = require('express-session');
 const authRouter = require('./controllers/auth.js');
 const listsRouter = require('./controllers/list.js');
 
-//middleware
+//middleware 
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
