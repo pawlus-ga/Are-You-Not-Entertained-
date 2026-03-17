@@ -16,6 +16,7 @@ import MovieDetails from './pages/MovieDetails';
 import CreateList from './pages/CreateList';
 import ViewLists from './pages/ViewLists';
 import ListDetails from './pages/ListDetails';
+import EditList from './pages/EditList';
 // import { UserProvider } from './context/UserContext.jsx';
 
 function App() {
@@ -68,6 +69,8 @@ function App() {
         <Route path="/lists" element={<ViewLists />} />
 
         <Route path="/lists/:id" element={<ListDetails />} />
+
+        <Route path="/lists/:id/edit" element={<EditList />} />
 
 
       </Routes>

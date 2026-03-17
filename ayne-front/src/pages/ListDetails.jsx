@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { getListById } from '../services/lists';
+import { useParams, Link, useNavigate } from 'react-router-dom';
+import { getListById, removeMovieFromList, deleteList } from '../services/lists';
 
 export default function ListDetails() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [list, setList] = useState(null);
   const [error, setError] = useState('');
 
@@ -21,6 +22,24 @@ export default function ListDetails() {
     fetchList();
   }, [id]);
 
+  const handleRemoveMovie = async (movieId) => {
+    try {
+      const updatedList = await removeMovieFromList(id, movieId);
+      setList(updatedList);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleDeleteList = async () => { // 👈 ADD HERE
+  try {
+    await deleteList(id);
+    navigate('/lists');
+  } catch (err) {
+    console.log(err);
+  }
+};
+
   if (error) return <h2>{error}</h2>;
   if (!list) return <h2>Loading list...</h2>;
 
@@ -28,7 +47,13 @@ export default function ListDetails() {
     <div className='listdetails'>
       <div>
         <h1>{list.name}</h1>
-        <p>{list.description}</p>
+        
+        <Link to={`/lists/${id}/edit`}>
+          <button>Edit List</button>
+        </Link>
+
+        <button onClick={handleDeleteList}>Delete List</button>
+
 
         <h2>Movies in this list</h2>
 
@@ -46,9 +71,15 @@ export default function ListDetails() {
 
                 {movie.imdbId && (
                   <p>
-                    <Link to={`/movies/omdb/${movie.imdbId}`}>View Movie Details</Link>
+                    <Link to={`/movies/omdb/${movie.imdbId}`}>
+                      View Movie Details
+                    </Link>
                   </p>
                 )}
+
+                <button onClick={() => handleRemoveMovie(movie._id)}>
+                  Remove from List
+                </button>
               </div>
             ))}
           </div>
