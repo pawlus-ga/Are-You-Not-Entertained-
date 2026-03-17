@@ -1,4 +1,4 @@
-![Watching a movie in a theater](src/public/images/ReadMeTheater.jpg)
+![Watching a movie in a theater](ayne-front/src/public/images/ReadMeTheater.jpg)
 # Are You Not Entertained?
 A user generated movie database
 
@@ -60,7 +60,13 @@ Link to the app:
 
 5. Screeshots:
 
+![List Entrie](ayne-front/src/public/images/ListEntriesSS.png)
 
+![List View](ayne-front/src/public/images/ListViewSS.png)
+
+![Movie Details](ayne-front/src/public/images/MovieDetailsSS.png)
+
+![Movie Search](ayne-front/src/public/images/MovieSearchSS.png)
 
 
 6. Future Endeavors:
