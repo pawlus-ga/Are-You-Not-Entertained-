@@ -14,6 +14,8 @@ import { getAllMovies } from './services/movies.js';
 import MovieSearch from './pages/MovieSearch';
 import MovieDetails from './pages/MovieDetails';
 import CreateList from './pages/CreateList';
+import ViewLists from './pages/ViewLists';
+import ListDetails from './pages/ListDetails';
 // import { UserProvider } from './context/UserContext.jsx';
 
 function App() {
@@ -48,6 +50,7 @@ function App() {
              handleFormView={handleFormView} isFormOpen={isFormOpen} />} />
 
           <Route path="/movies/:omdbId" element={<MovieDetails />} />
+          <Route path="/movies/omdb/:omdbId" element={<MovieDetails />} />
           
           <Route path='/movies/:id' element={<MovieDetail />} />
 
@@ -58,6 +61,10 @@ function App() {
           <Route path="/movies/search" element={<MovieSearch />} />
 
           <Route path="/lists/new" element={<CreateList />} />
+
+          <Route path="/lists" element={<ViewLists />} />
+
+          <Route path="/lists/:id" element={<ListDetails />} />
 
 
         </Routes>

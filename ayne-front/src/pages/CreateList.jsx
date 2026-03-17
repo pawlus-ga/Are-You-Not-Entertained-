@@ -44,16 +44,6 @@ export default function CreateList() {
           />
         </div>
 
-        <div>
-          <label>Description</label>
-          <input
-            type="text"
-            name="description"
-            value={formData.description}
-            onChange={handleChange}
-          />
-        </div>
-
         <button type="submit">Create List</button>
       </form>
 

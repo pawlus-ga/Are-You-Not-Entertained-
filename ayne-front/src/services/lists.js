@@ -12,6 +12,18 @@ const getLists = async () => {
   return res.json();
 };
 
+const getListById = async (listId) => {
+  const token = localStorage.getItem('token');
+
+  const res = await fetch(`${BASE_URL}/${listId}`, {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  });
+
+  return res.json();
+};
+
 const addMovieToList = async (listId, movieData) => {
   const token = localStorage.getItem('token');
 
@@ -42,4 +54,4 @@ const createList = async (listData) => {
   return res.json();
 };
 
-export { getLists, addMovieToList, createList };
+export { getLists, getListById, addMovieToList, createList };
