@@ -10,7 +10,7 @@ const cors = require('cors');
 const testJwtRouter = require('./controllers/test-jwt');
 const session = require('express-session');
 const authRouter = require('./controllers/auth.js');
-
+const listsRouter = require('./controllers/list.js');
 
 //middleware 
 app.use(session({
@@ -44,9 +44,9 @@ app.get('/', (req, res) => {
 });
 
 app.use('/movies', moviesRouter)
-//app.use('/lists', listsRouter)
+app.use('/lists', listsRouter)
 app.use('/auth', authRouter)
-//app.use('/users', userRouter)
+// app.use('/users', userRouter)
 app.use('/test-jwt', testJwtRouter)
 
 app.listen(PORT, () => {
