@@ -1,20 +1,22 @@
-Body {
-  margin: 0;
-  .rye-regular {
-  font-family: "Rye", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-  
-body {
-  font-size: 1.5rem;
-  text-align: center;
-  background-image: url('../public/images/Landing.jpg');
-  background-size: cover;
-  background-position: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
 
+.card {
+  padding: 2em;
+}
 
-
+.read-the-docs {
+  color: #888;
+}

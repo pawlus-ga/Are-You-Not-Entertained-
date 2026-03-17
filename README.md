@@ -1,4 +1,4 @@
-![Watching a movie in a theater](Are-You-Not-Entertained-/src/public/images/ReadMeTheater.jpg)
+![Watching a movie in a theater](./src/public/images/ReadMeTheater.jpg)
 # Are You Not Entertained?
 A user generated movie database
 
@@ -54,6 +54,10 @@ Link to the app:
     11. Node-fetch
     12. React 
     13. Router
+    14. Bootstrap
+    15. Dom
+    16. React-Bootstrap
+
 
 5. Future Endevors:
 
@@ -62,3 +66,5 @@ Link to the app:
     B. Adding audio, for a more interactive experience.
 
     C. Better compatibility for mobile devices
+
+    D. Add a "True User Dashboard"

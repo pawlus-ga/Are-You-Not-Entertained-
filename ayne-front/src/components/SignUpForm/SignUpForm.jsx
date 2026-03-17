@@ -1,7 +1,6 @@
 import { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { signUp } from '../../services/authService'
-
 import { UserContext } from '../../context/UserContext'
 
 const SignUpForm = () => {
@@ -38,47 +37,51 @@ const SignUpForm = () => {
 
     return (
         <main>
-            <h1>Sign Up</h1>
-            <p>{message}</p>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor='username'>Username: </label>
-                    <input
-                        type='text'
-                        id='name'
-                        value={username}
-                        name='username'
-                        onChange={handleChange}
-                        required
-                    />
+            <div className='signup'>
+                <div className='fill-form'>
+                <h1>Sign Up</h1>
+                <p>{message}</p>
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label htmlFor='username'>Username: </label>
+                        <input
+                            type='text'
+                            id='name'
+                            value={username}
+                            name='username'
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor='password'>Password: </label>
+                        <input
+                            type='password'
+                            id='password'
+                            value={password}
+                            name='password'
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor='passwordConfirm'>Confirm Password: </label>
+                        <input
+                            type='password'
+                            id='confirm'
+                            value={passwordConfirm}
+                            name='passwordConfirm'
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <div>
+                        <button disabled={isFormInvalid()}>Sign Up</button>
+                        <button onClick={() => navigate('/')}>Cancel</button>
+                    </div>
+                </form>
                 </div>
-                <div>
-                    <label htmlFor='password'>Password: </label>
-                    <input
-                        type='password'
-                        id='password'
-                        value={password}
-                        name='password'
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div>
-                    <label htmlFor='passwordConfirm'>Confirm Password: </label>
-                    <input
-                        type='password'
-                        id='confirm'
-                        value={passwordConfirm}
-                        name='passwordConfirm'
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div>
-                    <button disabled={isFormInvalid()}>Sign Up</button>
-                    <button onClick={() => navigate('/')}>Cancel</button>
-                </div>
-            </form>
+            </div>
         </main>
     )
 }

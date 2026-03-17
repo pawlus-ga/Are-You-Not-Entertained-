@@ -37,37 +37,40 @@ function App() {
 
   return (
     <div className="App">
-        <NavBar />
-        <Routes>
-          <Route path='/' element={<Landing />} />
-          <Route path='/sign-up' element={<SignUpForm />} />
+      <NavBar />
+      <Routes>
 
-          <Route path='/sign-in' element={<SignInForm />} />
+        <Route path='/' element={<Landing />} />
 
-          <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/sign-up' element={<SignUpForm />} />
 
-          <Route path='/movies' element={<MovieList movies={movies}
-             handleFormView={handleFormView} isFormOpen={isFormOpen} />} />
+        <Route path='/sign-in' element={<SignInForm />} />
 
-          <Route path="/movies/:omdbId" element={<MovieDetails />} />
-          <Route path="/movies/omdb/:omdbId" element={<MovieDetails />} />
-          
-          <Route path='/movies/:id' element={<MovieDetail />} />
+        <Route path='/dashboard' element={<Dashboard />} />
 
-          <Route path='/movies/new' element={<MovieForm />} />
+        <Route path='/movies' element={<MovieList movies={movies}
+          handleFormView={handleFormView} isFormOpen={isFormOpen} />} />
 
-          <Route path='/movies/:id/edit' element={<EditMovie />} />
+        <Route path="/movies/:omdbId" element={<MovieDetails />} />
 
-          <Route path="/movies/search" element={<MovieSearch />} />
+        <Route path="/movies/omdb/:omdbId" element={<MovieDetails />} />
 
-          <Route path="/lists/new" element={<CreateList />} />
+        <Route path='/movies/:id' element={<MovieDetail />} />
 
-          <Route path="/lists" element={<ViewLists />} />
+        <Route path='/movies/new' element={<MovieForm />} />
 
-          <Route path="/lists/:id" element={<ListDetails />} />
+        <Route path='/movies/:id/edit' element={<EditMovie />} />
+
+        <Route path="/movies/search" element={<MovieSearch />} />
+
+        <Route path="/lists/new" element={<CreateList />} />
+
+        <Route path="/lists" element={<ViewLists />} />
+
+        <Route path="/lists/:id" element={<ListDetails />} />
 
 
-        </Routes>
+      </Routes>
     </div>
   )
 }
