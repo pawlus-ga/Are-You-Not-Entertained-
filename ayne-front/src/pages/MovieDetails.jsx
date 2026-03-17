@@ -71,7 +71,7 @@ export default function MovieDetails() {
 console.log('poster url:', movie?.Poster);
 
   return (
-    <div>
+    <div className='detail'>
       <h1>{movie.Title}</h1>
       <p>{movie.Year}</p>
       <p>{movie.Genre}</p>

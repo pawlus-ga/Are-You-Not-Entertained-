@@ -19,31 +19,33 @@ export default function MovieSearch() {
   };
 
   return (
-    <div>
-      <h1>Movie Search</h1>
-
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Search movies..."
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-        <button type="submit">Search</button>
-      </form>
-
+    <div className='search'>
       <div>
-        {results.map((movie) => (
-          <Link key={movie.imdbID} to={`/movies/${movie.imdbID}`}>
-            <div>
-            <h3>{movie.Title}</h3>
-            <p>{movie.Year}</p>
-            {movie.Poster !== 'N/A' && (
-              <img src={movie.Poster} alt={movie.Title} width="150" />
-            )}
-          </div>
-          </Link>
-        ))}
+        <h1>Movie Search</h1>
+
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Search movies..."
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          <button type="submit">Search</button>
+        </form>
+
+        <div>
+          {results.map((movie) => (
+            <Link key={movie.imdbID} to={`/movies/${movie.imdbID}`}>
+              <div>
+                <h3>{movie.Title}</h3>
+                <p>{movie.Year}</p>
+                {movie.Poster !== 'N/A' && (
+                  <img src={movie.Poster} alt={movie.Title} width="150" />
+                )}
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );

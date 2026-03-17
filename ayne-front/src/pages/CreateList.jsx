@@ -29,6 +29,7 @@ export default function CreateList() {
   };
 
   return (
+    <div className='newlist'>
     <div>
       <h1>Create a New List</h1>
 
@@ -48,6 +49,7 @@ export default function CreateList() {
       </form>
 
       {message && <p>{message}</p>}
+    </div>
     </div>
   );
 }

@@ -25,6 +25,7 @@ export default function ViewLists() {
   }
 
   return (
+    <div className='viewlists'>
     <div>
       <h1>My Lists</h1>
 
@@ -43,6 +44,7 @@ export default function ViewLists() {
       ) : (
         <p>You have no lists yet.</p>
       )}
+    </div>
     </div>
   );
 }
