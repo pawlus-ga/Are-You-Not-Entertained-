@@ -31,7 +31,7 @@ mongoose.connection.on('connected', () => {
 
 // app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
-app.use(cors({ origin: 'https://areyounotentertained.netlify.app/', credentials: true }));
+app.use(cors({ origin: 'https://areyounotentertained.netlify.app', credentials: true }));
 app.use(express.json());
 app.use(methodOverride('_method'));
 app.use(logger('dev'));
